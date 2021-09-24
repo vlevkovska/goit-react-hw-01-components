@@ -1,14 +1,40 @@
-import React from 'react';
+// import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/App';
 
-const description = React.createElement('div', {
-  children: ['img', 'p', 'p', 'p'],
-});
-const stats = React.createElement('ul', { children: ['li', 'li', 'li'] });
-const profile = React.createElement('div', { children: [description, stats] });
-console.log(profile);
+ReactDOM.render(<App />, document.querySelector('#root'));
 
-ReactDOM.render(profile, document.querySelector('#root'));
+// const user = {
+//   name: 'Jacques Gluke',
+//   tag: 'jgluke',
+//   location: 'Ocho Rios, Jamaica',
+//   avatar: 'https://cdn-icons-png.flaticon.com/512/2922/2922506.png',
+//   stats: {
+//     followers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// };
+
+// const social_profile = (
+
+// );
+
+// const description = <div></div>;
+// const stats = <ul></ul>;
+// const profile = (
+//   <div>
+//     {description}
+//     {stats}
+//   </div>
+// );
+// const description = React.createElement('div', {
+//   children: ['img', 'p', 'p', 'p'],
+// });
+// const stats = React.createElement('ul', { children: ['li', 'li', 'li'] });
+// const profile = React.createElement('div', { children: [description, stats] });
+// console.log(profile);
+
 // import React from 'react';
 // import ReactDOM from 'react-dom';
 // import './index.css';
