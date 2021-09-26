@@ -1,3 +1,4 @@
+import Container from './Container';
 import User from './Profile';
 import users from '../user.json';
 import Statistics from './Statistics';
@@ -9,7 +10,7 @@ import transactions from '../transactions.json';
 
 export default function App() {
   return (
-    <div>
+    <Container>
       <User
         name={users[0].name}
         avatar={users[0].avatar}
@@ -22,6 +23,6 @@ export default function App() {
       <Statistics stats={statisticalData} title="Upload stats"></Statistics>
       <FriendList friends={friends}></FriendList>
       <TransactionHistory items={transactions} />
-    </div>
+    </Container>
   );
 }
