@@ -1,24 +1,25 @@
-import Container from './Container';
-import User from './Profile';
-import users from '../user.json';
-import Statistics from './Statistics';
+import Container from './Container/Container';
+import User from './Profile/Profile';
+import user from '../user.json';
+import Statistics from './Statistics/Statistics';
 import statisticalData from '../statistical-data.json';
-import FriendList from './FriendList';
+import FriendList from './Friendlist/FriendList';
 import friends from '../friends.json';
-import TransactionHistory from './Transactions';
+import TransactionHistory from './Transactions/Transactions';
 import transactions from '../transactions.json';
 
 export default function App() {
   return (
     <Container>
       <User
-        name={users[0].name}
-        avatar={users[0].avatar}
-        tag={users[0].tag}
-        location={users[0].location}
-        followers={users[0].stats.followers}
-        views={users[0].stats.views}
-        likes={users[0].stats.likes}
+        name={user.name}
+        avatar={user.avatar}
+        tag={user.tag}
+        location={user.location}
+        stats={user.stats}
+        // followers={users[0].stats.followers}
+        // views={users[0].stats.views}
+        // likes={users[0].stats.likes}
       />
       <Statistics stats={statisticalData} title="Upload stats"></Statistics>
       <FriendList friends={friends}></FriendList>
