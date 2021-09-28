@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import s from './statistics.module.css';
+import backgroundColor from './colorGenerator';
 
 function Statistics({ title, stats }) {
   return (
@@ -7,21 +8,14 @@ function Statistics({ title, stats }) {
       {/* {!title ? !title : <h2 className={s.title}>{title}</h2>} */}
       {title && <h2 className={s.title}>{title}</h2>}
       <ul className={s.list}>
-        {stats.map(element => (
+        {stats.map(({ id, label, percentage }) => (
           <li
             className={s.item}
-            key={element.id}
-            style={{
-              backgroundColor: `${
-                '#' +
-                (Math.random().toString(16) + '000000')
-                  .substring(2, 8)
-                  .toUpperCase()
-              }`,
-            }}
+            key={id}
+            style={{ backgroundColor: backgroundColor() }}
           >
-            <span className={s.label}>{element.label}</span>
-            <span className={s.percentage}>{element.percentage}%</span>
+            <span className={s.label}>{label}</span>
+            <span className={s.percentage}>{percentage}%</span>
           </li>
         ))}
       </ul>
@@ -30,9 +24,14 @@ function Statistics({ title, stats }) {
 }
 
 Statistics.propTypes = {
-  id: PropTypes.string,
-  label: PropTypes.string,
-  percentage: PropTypes.number,
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      label: PropTypes.string,
+      percentage: PropTypes.number,
+    }),
+  ),
 };
 
 export default Statistics;
